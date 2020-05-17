@@ -19,8 +19,8 @@
 				<div class="inner">
 					<a href="/" class="masthead-brand"><h3>Getidon</h3></a>
 					<nav class="nav nav-masthead justify-content-center">
-						<a class="nav-link {{ request()->is('/login') ? 'active' : '' }}" href="/login">Login</a>
-						<a class="nav-link {{ request()->is('/register') ? 'active' : '' }}" href="/register">Register</a>
+						<a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="/login">Login</a>
+						<a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="/register">Register</a>
 					</nav>
 				</div>
 			</header>

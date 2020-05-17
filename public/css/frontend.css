@@ -33,6 +33,12 @@ a:hover {
   color: #fff;
 }
 
+/* Input */
+.form-control:focus {
+  border: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .8);
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
