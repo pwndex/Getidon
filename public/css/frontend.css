@@ -77,6 +77,16 @@ body {
 
 .masthead-brand {
   margin-bottom: 0;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+
+.masthead-brand:hover,
+.masthead-brand:visited,
+.masthead-brand:focus {
+  color: #333;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 
 .nav-masthead .nav-link {
