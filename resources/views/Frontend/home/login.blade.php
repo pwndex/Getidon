@@ -2,9 +2,9 @@
 
 @section('content')
 
-<main role="main" class="container inner cover">
+<div class="col">
 	<form>
-		<h1 class="text-center cover-heading">Let's get it done</h1>
+		<h3 class="text-center main-text">Let's get it done</h3>
 		<div class="form-group">
 			<label for="email"><i class="fas fa-envelope"></i> Email address</label>
 			<input type="email" name="email" class="form-control" id="email" autocomplete="off">
@@ -19,12 +19,6 @@
 		</div>
 		<button type="submit" class="btn btn-lg btn-secondary">Login</button>
 	</form>
-</main>
-
-<footer class="text-center mastfoot mt-auto">
-	<div class="inner">
-		<p></p>
-	</div>
-</footer>
+</div>
 
 @endsection
