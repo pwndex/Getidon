@@ -21,4 +21,10 @@
 	</form>
 </main>
 
+<footer class="text-center mastfoot mt-auto">
+	<div class="inner">
+		<p></p>
+	</div>
+</footer>
+
 @endsection
