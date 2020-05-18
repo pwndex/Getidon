@@ -11,5 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.copy('node_modules/popper.js/dist/popper.min.js.map', 'public/js');
+
 mix.sass('resources/sass/frontend.scss', 'public/css')
 	.js('resources/js/frontend.js', 'public/js');

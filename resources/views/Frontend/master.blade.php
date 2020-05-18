@@ -17,10 +17,10 @@
 		<div class="container-md cover-container d-flex h-100 p-3 mx-auto flex-column">
 			<header class="text-center masthead mb-auto">
 				<div class="inner">
-					<a href="/" class="masthead-brand"><h3>Getidon</h3></a>
+					<a href="/" class="masthead-brand"><h3><i class="fas fa-check-double"></i> Getidon</h3></a>
 					<nav class="nav nav-masthead justify-content-center">
-						<a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="/login">Login</a>
-						<a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="/register">Register</a>
+						<a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+						<a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="/register"><i class="fas fa-user-plus"></i> Register</a>
 					</nav>
 				</div>
 			</header>
@@ -29,7 +29,7 @@
 
 			<footer class="text-center mastfoot mt-auto">
 				<div class="inner">
-					<p>Made with ❤ by <a href="https://instagram.com/pwndex" target="_blank">pwndex</a></p>
+					<p>Made with <i class="fas fa-heart"></i> by <a href="https://instagram.com/pwndex" target="_blank">pwndex</a></p>
 				</div>
 			</footer>
 		</div>

@@ -6,16 +6,16 @@
 	<form>
 		<h1 class="text-center cover-heading">Let's get it done</h1>
 		<div class="form-group">
-			<label for="email">Email address</label>
+			<label for="email"><i class="fas fa-envelope"></i> Email address</label>
 			<input type="email" name="email" class="form-control" id="email" autocomplete="off">
 		</div>
 		<div class="form-group">
-			<label for="password">Password</label>
+			<label for="password"><i class="fas fa-lock"></i> Password</label>
 			<input type="password" name="password" class="form-control" id="password" autocomplete="off">
 		</div>
 		<div class="form-group form-check">
-			<input type="checkbox" class="form-check-input" id="remember_me">
-			<label class="form-check-label" for="remember_me">Remember Me</label>
+		  <input class="form-check-input" type="checkbox" value="" id="remember_me">
+		  <label class="form-check-label" for="remember_me">Remember me</label>
 		</div>
 		<button type="submit" class="btn btn-lg btn-secondary">Login</button>
 	</form>
