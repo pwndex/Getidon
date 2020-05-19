@@ -10,7 +10,6 @@
 				<th></th>
 				<th>Title</th>
 				<th>Done</th>
-				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
 		</thead>
@@ -20,9 +19,6 @@
 				<td class="title-bold line-through">String have to be 45 symbols long</td>
 				<td>
 					<input class="checkbox" type="checkbox" value="">
-				</td>
-				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
 				</td>
 				<td>
 					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
@@ -35,9 +31,6 @@
 					<input class="" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
-				</td>
-				<td>
 					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
@@ -46,9 +39,6 @@
 				<td class="title-bold">Task three</td>
 				<td>
 					<input class="" type="checkbox" value="">
-				</td>
-				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
 				</td>
 				<td>
 					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>

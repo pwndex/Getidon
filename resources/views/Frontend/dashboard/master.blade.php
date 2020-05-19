@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{{-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> --}}
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
 
@@ -36,7 +37,8 @@
 										<i class="fas fa-user"></i> Account</a>
 
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-											<a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
+											<a class="dropdown-item" href="/dashboard/account/password"><i class="fas fa-lock"></i> Change password</a>
+											<a class="dropdown-item" href="/dashboard/account/settings"><i class="fas fa-cogs"></i> Settings</a>
 											<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
 										</div>
 									</div>

@@ -211,9 +211,17 @@ input[type=checkbox]:focus {
 	transition: .5s;
 }
 
+.pagination li a:focus {
+	box-shadow: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
 @media (max-width: 1000px) {
 	.navbar-nav, .dropdown-menu {
-		// text-align: center;
+		text-align: center;
 	}
 
 	.active {
@@ -233,6 +241,6 @@ input[type=checkbox]:focus {
 		display: none;
 	}
 	.dropdown {
-		margin-bottom: 60px;
+		margin-bottom: 180px;
 	}
 }
