@@ -28,7 +28,7 @@
 						<div class="collapse navbar-collapse" id="navbarNav">
 							<ul class="navbar-nav ml-auto">
 								<li class="nav-item">
-									<a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="/dashboard/addtask"><i class="fas fa-plus"></i> Add task</a>
+									<a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="/dashboard/task/create"><i class="fas fa-plus"></i> Add task</a>
 								</li>
 								<li class="nav-item">
 									<div class="dropdown">

@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="col">
-	<h1 class="main-text text-center">List of tasks</h1>
+	<h3 class="main-text text-center">List of tasks</h3>
 	<table class="table table-borderless table-hover">
 		<thead>
 			<tr>
 				<th></th>
 				<th>Title</th>
 				<th>Done</th>
+				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
 		</thead>
@@ -21,7 +22,10 @@
 					<input class="checkbox" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash"></i></a>
+					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
+				</td>
+				<td>
+					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 			<tr>
@@ -31,7 +35,10 @@
 					<input class="" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash"></i></a>
+					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
+				</td>
+				<td>
+					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +48,10 @@
 					<input class="" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash"></i></a>
+					<a href="#" class="btn custom-btn"><i class="fas fa-edit"></i></a>
+				</td>
+				<td>
+					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 		</tbody>

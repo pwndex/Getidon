@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard', function () {
-    return view('Frontend.dashboard.index');
+    return view('Frontend.dashboard.tasks.index');
 });
 
+Route::get('/dashboard/tasks', function () {
+    return view('Frontend.dashboard.tasks.index');
+});
 
+Route::get('/dashboard/task/create', function () {
+    return view('Frontend.dashboard.tasks.create');
+});
 
 Route::get('/', function () {
     return view('Frontend.home.index');
