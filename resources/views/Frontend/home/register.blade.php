@@ -1,4 +1,4 @@
-@extends('Frontend.master')
+@extends('Frontend.home.master')
 
 @section('content')
 
@@ -17,7 +17,7 @@
 			<label for="password_confirmation"><i class="fas fa-lock"></i> Password Confirmation</label>
 			<input type="password_confirmation" name="password_confirmation" class="form-control" id="password_confirmation">
 		</div>
-		<button type="submit" class="btn btn-lg btn-secondary">Register</button>
+		<button type="submit" class="btn btn-lg custom-btn">Register</button>
 	</form>
 </div>
 

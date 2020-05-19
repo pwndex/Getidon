@@ -1,4 +1,4 @@
-@extends('Frontend.master')
+@extends('Frontend.home.master')
 
 @section('content')
 
@@ -17,7 +17,7 @@
 		  <input class="form-check-input" type="checkbox" value="" id="remember_me">
 		  <label class="form-check-label" for="remember_me">Remember me</label>
 		</div>
-		<button type="submit" class="btn btn-lg btn-secondary">Login</button>
+		<button type="submit" class="btn btn-lg custom-btn">Login</button>
 	</form>
 </div>
 
