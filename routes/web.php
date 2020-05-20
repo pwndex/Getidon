@@ -13,26 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // FRONTEND TASKS
-Route::get('/dashboard', function () {
-    return view('Frontend.dashboard.tasks.index');
+Route::get('/tasks', function () {
+    return view('Frontend.tasks.index');
 });
 
-Route::get('/dashboard/tasks', function () {
-    return view('Frontend.dashboard.tasks.index');
-});
-
-Route::get('/dashboard/task/create', function () {
-    return view('Frontend.dashboard.tasks.create');
+Route::get('/tasks/create', function () {
+    return view('Frontend.tasks.create');
 });
 
 
 // FRONTEND ACCOUNT
-Route::get('/dashboard/account/settings', function () {
-	return view('Frontend.dashboard.account.settings');
+Route::get('/account/settings', function () {
+	return view('Frontend.account.settings');
 });
 
-Route::get('/dashboard/account/password', function () {
-	return view('Frontend.dashboard.account.password');
+Route::get('/account/password', function () {
+	return view('Frontend.account.password');
 });
 
 
