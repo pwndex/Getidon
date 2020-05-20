@@ -11,24 +11,4 @@ class FrontController extends Controller
 	{
 		return view('Frontend.home.index');
 	}
-
-	public function getLogin()
-	{
-		return view('Frontend.home.login');
-	}
-
-	public function postLogin()
-	{
-		// Post login code
-	}
-
-	public function getRegister()
-	{
-		return view('Frontend.home.register');
-	}
-
-	public function postRegister()
-	{
-		// Post register code
-	}
 }

@@ -30,18 +30,18 @@ Route::get('/dashboard/tasks', function () {
 
 
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
-	// LOGIN REGISTER
+	// LOGIN, REGISTER
 	Route::get('/', 'FrontController@index');
-	Route::get('/login', 'FrontController@getLogin');
-	Route::get('/register', 'FrontController@getRegister');
+	Route::get('/login', 'AuthController@getLogin');
+	Route::get('/register', 'AuthController@getRegister');
 
-	Route::post('/login', 'FrontController@postLogin');
-	Route::post('/register', 'FrontController@postRegister');
+	Route::post('/login', 'AuthController@postLogin');
+	Route::post('/register', 'AuthController@postRegister');
 
 	
 	// ACCOUNT
 	Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
-		// SETTINGS PASSWORD
+		// SETTINGS, PASSWORD
 		Route::get('/settings', 'SettingsController@index');
 		Route::get('/password', 'PasswordController@index');
 	});

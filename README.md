@@ -26,17 +26,17 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-Install all dependencies via composer and npm
-```shell
-composer install
-npm install
-```
-
 Set your MySQL database credentials inside .env file
 ```shell
 DB_DATABASE=<YOUR_DATABASE_NAME>
 DB_USERNAME=<YOUR_DATABASE_USERNAME>
 DB_PASSWORD=<YOUR_DATABASE_PASSWORD>
+```
+
+Install all dependencies via composer and npm
+```shell
+composer install
+npm install
 ```
 
 Make migrate
