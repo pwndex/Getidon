@@ -29,40 +29,27 @@ Route::get('/dashboard/tasks', function () {
 });
 
 
+Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
+	// LOGIN REGISTER
+	Route::get('/', 'FrontController@index');
+	Route::get('/login', 'FrontController@getLogin');
+	Route::get('/register', 'FrontController@getRegister');
+
+	Route::post('/login', 'FrontController@postLogin');
+	Route::post('/register', 'FrontController@postRegister');
+
+	
+	// ACCOUNT
+	Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
+		// SETTINGS PASSWORD
+		Route::get('/settings', 'SettingsController@index');
+		Route::get('/password', 'PasswordController@index');
+	});
 
 
+	// TASKS
+	Route::get('/tasks', 'TaskController@index');
+	Route::get('/tasks/create', 'TaskController@getCreate');
 
-
-
-// FRONTEND TASKS
-Route::get('/tasks', function () {
-    return view('Frontend.tasks.index');
-});
-
-Route::get('/tasks/create', function () {
-    return view('Frontend.tasks.create');
-});
-
-
-// FRONTEND ACCOUNT
-Route::get('/account/settings', function () {
-	return view('Frontend.account.settings');
-});
-
-Route::get('/account/password', function () {
-	return view('Frontend.account.password');
-});
-
-
-// FRONTEND HOME
-Route::get('/', function () {
-    return view('Frontend.home.index');
-});
-
-Route::get('/login', function () {
-    return view('Frontend.home.login');
-});
-
-Route::get('/register', function () {
-    return view('Frontend.home.register');
+	Route::post('/tasks/create', 'TaskController@postCreate');
 });
