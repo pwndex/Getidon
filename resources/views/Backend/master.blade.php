@@ -6,10 +6,10 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>Getidon - ToDo List</title>
+		<title>Getidon - Dashboard</title>
 
 		<!-- Core CSS -->
-		<link href="{{ mix('/css/frontend.css') }}" rel="stylesheet">
+		<link href="{{ mix('/css/backend.css') }}" rel="stylesheet">
 	</head>
 
 	<body>
@@ -18,8 +18,8 @@
 			<div class="row">
 				<div class="col">
 					<nav class="navbar navbar-expand-lg navbar-light">
-						<a class="navbar-brand" href="/tasks">
-							<h3><i class="fas fa-check-circle"></i> Getidon <span class="small-text text-muted">todo list</span></h3>
+						<a class="navbar-brand" href="/dashboard">
+							<h3><i class="fas fa-check-circle"></i> Getidon <span class="small-text text-muted">Dashboard</span></h3>
 
 						</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,27 +28,32 @@
 						<div class="collapse navbar-collapse" id="navbarNav">
 							<ul class="navbar-nav ml-auto">
 								<li class="nav-item">
-									<a class="nav-link {{ request()->is('tasks/create') ? 'active' : '' }}" href="/tasks/create"><i class="fas fa-plus"></i> Add task</a>
+									<a class="nav-link" href="/tasks"><i class="fas fa-angle-left"></i> Go to Getidon</a>
 								</li>
 								<li class="nav-item">
-									<div class="dropdown">
-										<a class="nav-link custom-dropdown-btn dropdown-toggle" href="/account" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<i class="fas fa-user"></i> Account</a>
-
-										<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-											<a class="dropdown-item" href="/account/password"><i class="fas fa-lock"></i> Change password</a>
-											<a class="dropdown-item" href="/account/settings"><i class="fas fa-cogs"></i> Settings</a>
-											<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-										</div>
-									</div>
+									<a class="nav-link" href="/dashboard/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
 					</nav>
 				</div>
 			</div>
-			<div class="row">
-				@yield('content')
+			<div class="row mb-auto">
+				<div class="col card text-center bg-transparent border-0">
+					<div class="card-header">
+						<ul class="nav nav-tabs card-header-tabs justify-content-center">
+							<li class="nav-item">
+								<a class="nav-link {{ request()->is('dashboard/users') ? 'active' : '' }}" href="/dashboard/users">Users</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ request()->is('dashboard/tasks') ? 'active' : '' }}" href="/dashboard/tasks">Tasks</a>
+							</li>
+						</ul>
+					</div>
+					<div class="card-body">
+						@yield('content')
+					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col footer text-center">
@@ -63,6 +68,6 @@
 
 
 		<!-- Core JS -->
-		<script src="{{ mix('/js/frontend.js') }}"></script>
+		<script src="{{ mix('/js/backend.js') }}"></script>
 	</body>
 </html>

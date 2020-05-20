@@ -22,7 +22,14 @@ a:hover {
 	color: #333;
 }
 
-.form-control:focus {
+.form-control-sm {
+	border: none;
+	outline: none;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .8);
+}
+
+.form-control:focus,
+.form-control-sm:focus {
 	border: none;
 	outline: none;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .8);
@@ -79,11 +86,6 @@ body {
 
 .nav-link {
 	margin-left: 1rem;
-}
-
-.active {
-	color: #333;
-	border-bottom-color: #6c757d;
 }
 
 .dropdown-menu {
@@ -164,8 +166,9 @@ input[type=checkbox]:checked {
 
 input[type=checkbox]:checked:after {
 	margin-left: 8px;
+	margin-top: 1px;
 	width: 12px;
-	height: 25px;
+	height: 20px;
 	border: solid #333;
 	border-width: 0 2mm 2mm 0;
 	-webkit-transform: rotate(45deg);
@@ -216,6 +219,51 @@ input[type=checkbox]:focus {
 
 .btn:focus {
   box-shadow: none;
+}
+
+// .card-header .nav-link {
+// 	color: #6c757d;
+// 	background: none;
+// }
+
+// .card-header .nav-link:hover,
+// .card-header .nav-link:focus {
+// 	border-color: transparent;
+// 	outline: none;
+// 	box-shadow: none;
+// 	color: #333;
+// 	font-weight: 700;
+// }
+
+.card-header .nav-link {
+	padding: .25rem 0;
+	font-weight: 700;
+	color: #6c757d;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+	background-color: transparent;
+	border-bottom: .10rem solid transparent;
+	transition: .5s;
+}
+
+.card-header .nav-link:hover,
+.card-header .nav-link:focus {
+	color: #333;
+	outline: none;
+	box-shadow: none;
+	border-color: transparent;
+	border-bottom-color: #6c757d;
+	transition: .5s;
+}
+
+.card-header .nav-link {
+	margin-left: 1rem;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #333;
+	background-color: transparent;
+	border-color: transparent;
+	border-bottom-color: #6c757d;
 }
 
 @media (max-width: 1000px) {

@@ -12,6 +12,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// BACKEND DASHBOARD
+Route::get('/dashboard', function () {
+    return view('Backend.master');
+});
+
+// BACKEND USERS
+Route::get('/dashboard/users', function () {
+    return view('Backend.users.index');
+});
+
+
+// BACKEND TASKS
+Route::get('/dashboard/tasks', function () {
+    return view('Backend.tasks.index');
+});
+
+
+
+
+
+
+
 // FRONTEND TASKS
 Route::get('/tasks', function () {
     return view('Frontend.tasks.index');

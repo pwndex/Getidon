@@ -4,7 +4,7 @@
 
 <div class="col">
 	<h3 class="main-text text-center">List of tasks</h3>
-	<table class="table table-borderless table-hover">
+	<table class="table table-borderless table-hover table-sm table-responsive-sm ">
 		<thead>
 			<tr>
 				<th></th>
@@ -21,7 +21,7 @@
 					<input class="checkbox" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
+					<a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 			<tr>
@@ -31,7 +31,7 @@
 					<input class="" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
+					<a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +41,7 @@
 					<input class="" type="checkbox" value="">
 				</td>
 				<td>
-					<a href="#" class="btn custom-btn"><i class="fas fa-trash-alt"></i></a>
+					<a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 		</tbody>
