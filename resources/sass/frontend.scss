@@ -45,6 +45,10 @@ body {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 
+.alert ul li {
+	list-style: none;
+}
+
 .cover-container {
 	max-width: 42em;
 	height: 100%;
@@ -216,6 +220,10 @@ input[type=checkbox]:focus {
 
 .btn:focus {
   box-shadow: none;
+}
+
+.text-success, .text-danger {
+	text-shadow: none;
 }
 
 @media (max-width: 1000px) {
