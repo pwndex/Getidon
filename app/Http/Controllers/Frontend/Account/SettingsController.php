@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function __invoke()
+    public function getUpdate()
     {
     	return view('Frontend.account.settings');
+    }
+
+    public function postUpdate()
+    {
+        // code...
     }
 }

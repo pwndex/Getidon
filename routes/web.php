@@ -23,6 +23,7 @@ Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' =
 		Route::get('/', 'UserController@index');
 		Route::get('/create', 'UserController@getCreate');
 		Route::get('/{user}/update', 'UserController@getUpdate');
+		Route::get('/{user}/delete', 'UserController@delete');
 
 		Route::post('/create', 'UserController@postCreate');
 		Route::post('/{user}/update', 'UserController@postUpdate');
@@ -33,6 +34,7 @@ Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' =
 		Route::get('/', 'TaskController@index');
 		Route::get('/create', 'TaskController@getCreate');
 		Route::get('/{task}/update', 'TaskController@getUpdate');
+		Route::get('/{task}/delete', 'TaskController@delete');
 
 		Route::post('/create', 'TaskController@postCreate');
 		Route::post('/{task}/update', 'TaskController@postUpdate');
@@ -58,8 +60,11 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 	Route::group(['middleware' => 'auth'], function(){
 		// ACCOUNT
 		Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
-			Route::get('/settings', 'SettingsController');
-			Route::get('/password', 'PasswordController');
+			Route::get('/settings', 'SettingsController@getUpdate');
+			Route::get('/password', 'PasswordController@getUpdate');
+
+			Route::post('/settings', 'SettingsController@getUpdate');
+			Route::post('/password', 'PasswordController@getUpdate');
 		});
 
 
@@ -67,8 +72,11 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 		Route::group(['prefix' => '/tasks'], function(){
 			Route::get('/', 'TaskController@index');
 			Route::get('/create', 'TaskController@getCreate');
+			Route::get('/{task}/update', 'TaskController@getUpdate');
+			Route::get('/{task}/delete', 'TaskController@delete');
 
 			Route::post('/create', 'TaskController@postCreate');
+			Route::post('/{task}/update', 'TaskController@postUpdate');
 		});
 
 

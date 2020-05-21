@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 
 class PasswordController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function __invoke()
+    public function getUpdate()
     {
         return view('Frontend.account.password');
+    }
+
+    public function postUpdate()
+    {
+        // code...
     }
 }
