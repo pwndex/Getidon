@@ -55,4 +55,6 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 	Route::get('/tasks/create', 'TaskController@getCreate');
 
 	Route::post('/tasks/create', 'TaskController@postCreate');
+
+	Route::get('/logout', 'AuthController@logout');
 });

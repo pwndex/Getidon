@@ -38,7 +38,7 @@
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 											<a class="dropdown-item" href="/account/password"><i class="fas fa-lock"></i> Change password</a>
 											<a class="dropdown-item" href="/account/settings"><i class="fas fa-cogs"></i> Settings</a>
-											<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+											<a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
 										</div>
 									</div>
 								</li>

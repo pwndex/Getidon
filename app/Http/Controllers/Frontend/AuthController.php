@@ -35,4 +35,11 @@ class AuthController extends Controller
 
 		return redirect('/tasks')->with('success', 'You have been successfully joined in!');
 	}
+
+	public function logout()
+	{
+		auth()->logout();
+
+		return redirect('/login')->with('success', 'You have been successfully loged out!');
+	}
 }
