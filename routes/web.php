@@ -12,20 +12,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// BACKEND DASHBOARD
-Route::get('/dashboard', function () {
-    return view('Backend.master');
-});
-
-// BACKEND USERS
-Route::get('/dashboard/users', function () {
-    return view('Backend.users.index');
-});
 
 
-// BACKEND TASKS
-Route::get('/dashboard/tasks', function () {
-    return view('Backend.tasks.index');
+Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' => ['role', 'auth']], function(){
+	// BACKEND DASHBOARD
+	Route::get('/', function () {
+	    return view('Backend.master');
+	});
+
+	// BACKEND USERS
+	Route::get('/users', function () {
+	    return view('Backend.users.index');
+	});
+
+
+	// BACKEND TASKS
+	Route::get('/tasks', function () {
+	    return view('Backend.tasks.index');
+	});
 });
 
 
@@ -42,19 +46,21 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 	});
 
 	
-	// ACCOUNT
-	Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
-		// SETTINGS, PASSWORD
-		Route::get('/settings', 'SettingsController@index');
-		Route::get('/password', 'PasswordController@index');
+	Route::group(['middleware' => ['auth']], function(){
+		// ACCOUNT
+		Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
+			// SETTINGS, PASSWORD
+			Route::get('/settings', 'SettingsController@index');
+			Route::get('/password', 'PasswordController@index');
+		});
+
+
+		// TASKS
+		Route::get('/tasks', 'TaskController@index');
+		Route::get('/tasks/create', 'TaskController@getCreate');
+
+		Route::post('/tasks/create', 'TaskController@postCreate');
+
+		Route::get('/logout', 'AuthController@logout');
 	});
-
-
-	// TASKS
-	Route::get('/tasks', 'TaskController@index');
-	Route::get('/tasks/create', 'TaskController@getCreate');
-
-	Route::post('/tasks/create', 'TaskController@postCreate');
-
-	Route::get('/logout', 'AuthController@logout');
 });
