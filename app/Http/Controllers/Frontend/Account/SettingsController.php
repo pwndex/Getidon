@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Frontend\Account;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
-	public function index()
-	{
-		return view('Frontend.account.settings');
-	}
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke()
+    {
+    	return view('Frontend.account.settings');
+    }
 }

@@ -34,10 +34,10 @@ Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' =
 
 
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
-	
+	// IF NOT AUTH
 	Route::group(['middleware' => 'guest'], function(){
-		// LOGIN, REGISTER
-		Route::get('/', 'FrontController@index');
+		// AUTH
+		Route::get('/', 'FrontController');
 		Route::get('/login', 'AuthController@getLogin');
 		Route::get('/register', 'AuthController@getRegister');
 
@@ -46,21 +46,25 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 	});
 
 	
+	// IF AUTH
 	Route::group(['middleware' => ['auth']], function(){
 		// ACCOUNT
 		Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
-			// SETTINGS, PASSWORD
-			Route::get('/settings', 'SettingsController@index');
-			Route::get('/password', 'PasswordController@index');
+			Route::get('/settings', 'SettingsController');
+			Route::get('/password', 'PasswordController');
 		});
 
 
 		// TASKS
-		Route::get('/tasks', 'TaskController@index');
-		Route::get('/tasks/create', 'TaskController@getCreate');
+		Route::group(['prefix' => '/tasks', 'namespace' => 'Account'], function(){
+			Route::get('/', 'TaskController@index');
+			Route::get('/create', 'TaskController@getCreate');
 
-		Route::post('/tasks/create', 'TaskController@postCreate');
+			Route::post('/create', 'TaskController@postCreate');
+		});
 
+
+		// LOGOUT
 		Route::get('/logout', 'AuthController@logout');
 	});
 });
