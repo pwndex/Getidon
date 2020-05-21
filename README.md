@@ -39,6 +39,11 @@ composer install
 npm install
 ```
 
+Compile styles and scripts via npm
+```shell
+npm run dev
+```
+
 Make migrate
 ```shell
 php artisan migrate
