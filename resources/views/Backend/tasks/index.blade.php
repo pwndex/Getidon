@@ -21,7 +21,7 @@
 	<tbody>
 		<tr>
 			<th scope="row">1</th>
-			<td>Clean the house</td>
+			<td>Sometask</td>
 			<td>Mark</td>
 			<td>No</td>
 			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<th scope="row">2</th>
-			<td>Wash the car</td>
+			<td>Sometask</td>
 			<td>Alex</td>
 			<td>Yes</td>
 			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
@@ -37,7 +37,7 @@
 		</tr>
 		<tr>
 			<th scope="row">3</th>
-			<td>Create a project</td>
+			<td>Sometask</td>
 			<td>Amal</td>
 			<td>No</td>
 			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>

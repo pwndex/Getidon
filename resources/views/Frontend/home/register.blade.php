@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="col">
-	<form>
+	<form action="/register" method="POST">
+		{{ csrf_field() }}
+		@include('Frontend.errors')
 		<h3 class="text-center main-text">Join in</h3>
 		<div class="form-group">
 			<label for="email"><i class="fas fa-envelope"></i> Email address</label>

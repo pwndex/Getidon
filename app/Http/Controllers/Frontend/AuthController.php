@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\Frontend\LoginRequest;
+use App\Http\Requests\Frontend\RegisterRequest;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -27,8 +28,13 @@ class AuthController extends Controller
 		return view('Frontend.home.register');
 	}
 
-	public function postRegister()
+	public function postRegister(RegisterRequest $request)
 	{
-		// Post register code
+		User::create([
+			'email' => $request->input('email'),
+			'password' => bcrypt($request->input('password'))
+		]);
+
+		return redirect('/tasks')->with('success', 'You have been successfully joined in!');
 	}
 }
