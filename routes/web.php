@@ -13,26 +13,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// BACKEND
 Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' => ['role', 'auth']], function(){
-	// BACKEND DASHBOARD
-	Route::get('/', function () {
-	    return view('Backend.master');
+
+	Route::get('/', 'FrontController');
+
+	// USERS
+	Route::group(['prefix' => '/users'], function(){
+		Route::get('/', 'UserController@index');
+		Route::get('/create', 'UserController@getCreate');
+		Route::get('/{user}/update', 'UserController@getUpdate');
+
+		Route::post('/create', 'UserController@postCreate');
+		Route::post('/{user}/update', 'UserController@postUpdate');
 	});
 
-	// BACKEND USERS
-	Route::get('/users', function () {
-	    return view('Backend.users.index');
-	});
+	// TASKS
+	Route::group(['prefix' => '/tasks'], function(){
+		Route::get('/', 'TaskController@index');
+		Route::get('/create', 'TaskController@getCreate');
+		Route::get('/{task}/update', 'TaskController@getUpdate');
 
-
-	// BACKEND TASKS
-	Route::get('/tasks', function () {
-	    return view('Backend.tasks.index');
+		Route::post('/create', 'TaskController@postCreate');
+		Route::post('/{task}/update', 'TaskController@postUpdate');
 	});
 });
 
 
+// FRONTEND
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 	// IF NOT AUTH
 	Route::group(['middleware' => 'guest'], function(){
