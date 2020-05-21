@@ -17,7 +17,7 @@
 		<tbody>
 			<tr>
 				<th>1</th>
-				<td class="title-bold line-through">String have to be 45 symbols long</td>
+				<td class="title-bold line-through">Create a repo on GitHub</td>
 				<td>
 					<input class="checkbox" type="checkbox" value="">
 				</td>
@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>2</th>
-				<td class="title-bold">Task two</td>
+				<td class="title-bold">Learn PHP OOP</td>
 				<td>
 					<input class="" type="checkbox" value="">
 				</td>
@@ -37,7 +37,7 @@
 			</tr>
 			<tr>
 				<th>3</th>
-				<td class="title-bold">Task three</td>
+				<td class="title-bold">Practice with CSS</td>
 				<td>
 					<input class="" type="checkbox" value="">
 				</td>

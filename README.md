@@ -1,3 +1,4 @@
+![Getidon](public/images/getidon_1.png)
 # About Getidon
 
 Getidon is the powerful todo list, built in Laravel framework
@@ -10,7 +11,7 @@ You need to have the following installed:
 * composer
 * Nginx
 * MySQL
-* [Laravel](https://laravel.com/docs/7.x) Laravel Installation
+* [Laravel](https://laravel.com/docs/7.x)
 
 ## Getting Started
 
@@ -19,18 +20,10 @@ Clone the repository to your local machine
 git clone https://github.com/pwndex/Getidon.git
 ```
 
-Open Getidon folder, copy .env file and generate key via artisan
+Open Getidon folder and copy .env file
 ```shell
 cd Getidon
 cp .env.example .env
-php artisan key:generate
-```
-
-Set your MySQL database credentials inside .env file
-```shell
-DB_DATABASE=<YOUR_DATABASE_NAME>
-DB_USERNAME=<YOUR_DATABASE_USERNAME>
-DB_PASSWORD=<YOUR_DATABASE_PASSWORD>
 ```
 
 Install all dependencies via composer and npm
@@ -39,20 +32,26 @@ composer install
 npm install
 ```
 
-Compile styles and scripts via npm
+Compile styles and scripts via npm and generate key via artisan
 ```shell
 npm run dev
+php artisan key:generate
 ```
 
-Make migrate
+Set up your MySQL database credentials inside .env file
+```shell
+DB_DATABASE=<YOUR_DATABASE_NAME>
+DB_USERNAME=<YOUR_DATABASE_USERNAME>
+DB_PASSWORD=<YOUR_DATABASE_PASSWORD>
+```
+
+Make migrate and run the app
 ```shell
 php artisan migrate
-```
-
-Run the app
-```shell
 php artisan serve
 ```
+
+![Getidon](public/images/getidon_2.png)
 
 ## License
 
