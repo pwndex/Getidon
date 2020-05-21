@@ -30,10 +30,8 @@ class AuthController extends Controller
 
 	public function postRegister(RegisterRequest $request)
 	{
-		User::create([
-			'email' => $request->input('email'),
-			'password' => bcrypt($request->input('password'))
-		]);
+		$user = User::create($request->all());
+		auth()->login($user);
 
 		return redirect('/tasks')->with('success', 'You have been successfully joined in!');
 	}
