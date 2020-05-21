@@ -47,7 +47,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 
 	
 	// IF AUTH
-	Route::group(['middleware' => ['auth']], function(){
+	Route::group(['middleware' => 'auth'], function(){
 		// ACCOUNT
 		Route::group(['prefix' => '/account', 'namespace' => 'Account'], function(){
 			Route::get('/settings', 'SettingsController');
@@ -56,7 +56,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 
 
 		// TASKS
-		Route::group(['prefix' => '/tasks', 'namespace' => 'Account'], function(){
+		Route::group(['prefix' => '/tasks'], function(){
 			Route::get('/', 'TaskController@index');
 			Route::get('/create', 'TaskController@getCreate');
 
