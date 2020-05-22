@@ -19,39 +19,25 @@
 		</tr>
 	</thead>
 	<tbody>
+		@foreach($users as $user)
 		<tr>
-			<th scope="row">1</th>
-			<td>mark@example.com</td>
-			<td>Mark</td>
-			<td>User</td>
+			<th scope="row">{{ $user->id }}</th>
+			<td>{{ $user->email }}</td>
+			<td>{{ $user->name }}</td>
+			@if($user->is_admin == 1)
+				<td>Admin</td>
+			@else
+				<td>User</td>
+			@endif
 			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
 			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
 		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>alex@example.com</td>
-			<td>Alex</td>
-			<td>User</td>
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>amal@example.com</td>
-			<td>Amal</td>
-			<td>Administrator</td>
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
-		</tr>
+		@endforeach
 	</tbody>
 </table>
 <nav aria-label="...">
 	<ul class="pagination pagination-sm">
-		<li class="page-item disabled">
-	    	<a class="page-link" href="#" tabindex="-1">1</a>
-		</li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		{{ $users->links() }}
 	</ul>
 </nav>
 

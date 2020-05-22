@@ -36,6 +36,9 @@
 										<i class="fas fa-user"></i> Account</a>
 
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+											@if(auth()->user()->is_admin == 1)
+												<a class="dropdown-item" href="/dashboard"><i class="fas fa-chalkboard"></i> Dashboard</a>
+											@endif
 											<a class="dropdown-item" href="/account/password"><i class="fas fa-lock"></i> Change password</a>
 											<a class="dropdown-item" href="/account/settings"><i class="fas fa-cogs"></i> Settings</a>
 											<a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>

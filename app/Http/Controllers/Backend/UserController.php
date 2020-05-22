@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
 	public function index()
 	{
-		return view('Backend.users.index');
+		$users = User::paginate(3);
+		return view('Backend.users.index', ['users' => $users]);
 	}
 
 	public function getCreate()

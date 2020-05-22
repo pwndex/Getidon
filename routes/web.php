@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // BACKEND
-Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' => ['role', 'auth']], function(){
+Route::group(['prefix' => '/dashboard', 'namespace' => 'Backend', 'middleware' => ['auth', 'role']], function(){
 
 	Route::get('/', 'FrontController');
 

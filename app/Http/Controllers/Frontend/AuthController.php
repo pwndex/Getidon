@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\LoginRequest;
 use App\Http\Requests\Frontend\RegisterRequest;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -29,7 +30,7 @@ class AuthController extends Controller
 
 	public function postRegister(RegisterRequest $request)
 	{
-		$user = \User::create($request->all());
+		$user = User::create($request->all());
 		auth()->login($user);
 
 		return redirect('/tasks')->with('success', 'You have been successfully joined in!');

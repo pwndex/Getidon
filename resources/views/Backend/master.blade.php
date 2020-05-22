@@ -31,7 +31,7 @@
 									<a class="nav-link" href="/tasks"><i class="fas fa-angle-left"></i> Go to Getidon</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/dashboard/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+									<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
