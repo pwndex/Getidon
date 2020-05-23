@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col">
-	@include('Frontend.errors')
+	@include('errors')
 	<h3 class="main-text text-center">List of tasks</h3>
 	<table class="table table-borderless table-hover table-sm table-responsive-sm ">
 		<thead>

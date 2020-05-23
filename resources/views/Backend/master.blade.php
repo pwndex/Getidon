@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<div class="row mb-auto">
-				<div class="col card text-center bg-transparent border-0">
+				<div class="col card bg-transparent border-0">
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs justify-content-center">
 							<li class="nav-item">

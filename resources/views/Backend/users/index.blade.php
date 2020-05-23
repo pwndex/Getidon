@@ -1,13 +1,12 @@
 @extends('Backend.master')
 
 @section('content')
-
+@include('errors')
 <table class="table table-sm table-responsive-sm table-borderless table-hover">
 	<thead>
-		<a href="#" class="btn btn-sm custom-btn float-left">Create user</a>
+		<a href="/dashboard/users/create" class="btn btn-sm custom-btn float-left">Create user</a>
 		<div class="float-right">
-			<input type="text" class="form-control-sm" placeholder="Search" aria-label="" aria-describedby="search-btn">
-			<button class="btn btn-sm custom-btn" type="button" id="search-btn"><i class="fas fa-search"></i></button>
+			<input type="text" class="form-control-sm" id="search-input" placeholder="Search" aria-label="" aria-describedby="search-btn">
 		</div>
 		<tr>
 			<th scope="col">#</th>
@@ -18,7 +17,7 @@
 			<th scope="col">Delete</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="search-table">
 		@foreach($users as $user)
 		<tr>
 			<th scope="row">{{ $user->id }}</th>

@@ -5,7 +5,7 @@
 <div class="col">
 	<form action="/login" method="POST">
 		{{ csrf_field() }}
-		@include('Frontend.errors')
+		@include('errors')
 		<h3 class="text-center main-text">Let's get it done</h3>
 		<div class="form-group">
 			<label for="email"><i class="fas fa-envelope"></i> Email address</label>

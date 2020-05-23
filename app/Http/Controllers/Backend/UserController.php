@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Backend\UserCreateRequest;
 use App\User;
 
 class UserController extends Controller
@@ -19,9 +19,11 @@ class UserController extends Controller
 		return view('Backend.users.create');
 	}
 
-	public function postCreate()
+	public function postCreate(UserCreateRequest $request)
 	{
-		// code...
+		User::create($request->all());
+
+		return redirect('/dashboard/users')->with('success', 'User has been successfully created!');
 	}
 
 	public function getUpdate()
