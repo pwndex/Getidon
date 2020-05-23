@@ -28,8 +28,8 @@
 			@else
 				<td>User</td>
 			@endif
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
-			<td><a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
+			<td><a href="/dashboard/users/{{ $user->id }}/update" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
+			<td><a href="/dashboard/users/{{ $user->id }}/delete" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
 		</tr>
 		@endforeach
 	</tbody>

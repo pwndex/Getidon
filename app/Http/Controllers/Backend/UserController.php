@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserCreateRequest;
+use App\Http\Requests\Backend\UserUpdateRequest;
 use App\User;
 
 class UserController extends Controller
 {
 	public function index()
 	{
-		$users = User::paginate(3);
+		$users = User::paginate(5);
 		return view('Backend.users.index', ['users' => $users]);
 	}
 
@@ -26,13 +27,29 @@ class UserController extends Controller
 		return redirect('/dashboard/users')->with('success', 'User has been successfully created!');
 	}
 
-	public function getUpdate()
+	public function getUpdate(User $user)
 	{
-		return view('Backend.users.update');
+		return view('Backend.users.update', ['user' => $user]);
 	}
 
-	public function postUpdate()
+	public function postUpdate(User $user, UserUpdateRequest $request)
 	{
-		// code...
+		$user->email = $request->input('email');
+		$user->name = $request->input('name');
+		if ($request->filled('password')){
+			$user->password = $request->input('password');
+		}
+		$user->is_admin = $request->input('is_admin');
+
+		$user->save();
+
+		return redirect('/dashboard/users')->with('success', 'User has been successfully updated!');
+	}
+
+	public function delete(User $user)
+	{
+		$user->delete();
+
+		return redirect()->back()->with('success', 'User has been successfully deleted!');
 	}
 }
