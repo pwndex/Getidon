@@ -18,9 +18,9 @@
 			@foreach($tasks as $task)
 			<tr>
 				<th>{{ $task->id }}</th>
-				<td class="title-bold line-through">{{ $task->title }}</td>
+				<td id="line-{{ $task->id }}" class="title-bold {{ ($task->is_done == 1) ? 'line-through' : ''}}">{{ $task->title }}</td>
 				<td>
-					<input class="checkbox" type="checkbox" value="">
+					<input class="checkbox taskstate" name="taskstate" type="checkbox" value="{{ $task->id }}" {{ ($task->is_done == 1) ? 'checked' : ''}}>
 				</td>
 				<td>
 					<a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
@@ -36,4 +36,26 @@
 	</nav>
 </div>
 
+@endsection
+
+@section('scripts')
+<script>
+	$(".taskstate").on("change", function(e) {
+		e.preventDefault();
+		$("#line-"+e.target.value).toggleClass("line-through");
+		$.ajaxSetup({
+		    headers: {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		    }
+		});
+		$.ajax({
+		    url: '/tasks/' + e.target.value + '/taskstate',
+		    type: 'POST',
+		    taskstate: e.target.value,
+		    success: function(msg) {
+				console.log(msg);
+	        }
+		});
+	});
+</script>
 @endsection

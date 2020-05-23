@@ -69,5 +69,6 @@
 
 		<!-- Core JS -->
 		<script src="{{ mix('/js/backend.js') }}"></script>
+		@yield('scripts')
 	</body>
 </html>

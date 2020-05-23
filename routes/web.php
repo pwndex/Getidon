@@ -77,6 +77,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 
 			Route::post('/create', 'TaskController@postCreate');
 			Route::post('/{task}/update', 'TaskController@postUpdate');
+			Route::post('/{id}/taskstate', 'TaskController@taskState');
 		});
 
 

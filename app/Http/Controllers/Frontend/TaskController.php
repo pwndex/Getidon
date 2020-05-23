@@ -23,4 +23,13 @@ class TaskController extends Controller
 	{
 		// Post create task code
 	}
+
+	public function taskState(Request $request)
+	{
+		$task = Task::findOrFail($request->id);
+		if(auth()->user()->id == $task->user_id){
+			$task->is_done = ($task->is_done == 1) ? 0 : 1;
+			$task->save();
+		}
+	}
 }
