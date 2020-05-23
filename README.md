@@ -45,10 +45,17 @@ DB_USERNAME=<YOUR_DATABASE_USERNAME>
 DB_PASSWORD=<YOUR_DATABASE_PASSWORD>
 ```
 
-Make migrate and run the app
+Make migrate, seed database and run the app
 ```shell
 php artisan migrate
+php artisan db:seed
 php artisan serve
+```
+
+Login credentials ( as Admin )
+```shell
+login: admin@example.com
+password: admin
 ```
 
 ![Getidon](public/images/getidon_2.png)

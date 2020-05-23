@@ -218,6 +218,16 @@ input[type=checkbox]:focus {
 	box-shadow: none;
 }
 
+.page-link,
+.page-link:hover,
+.custom-active,
+.custom-active span,
+.custom-active span:hover {
+	color: #6c757d;
+	cursor: pointer;
+	background-color: #fff;
+}
+
 .btn:focus {
   box-shadow: none;
 }
@@ -250,4 +260,9 @@ input[type=checkbox]:focus {
 	.dropdown {
 		margin-bottom: 180px;
 	}
+}
+
+.page-link {
+	margin-left: none;
+	border: none;
 }

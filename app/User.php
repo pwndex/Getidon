@@ -47,4 +47,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
+
+    /**
+     * The One To Many Relationship (tasks table).
+     *
+     * @var array
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
 }
