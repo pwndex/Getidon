@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Account;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\UpdatePasswordRequest;
 
 class PasswordController extends Controller
 {
@@ -11,8 +12,12 @@ class PasswordController extends Controller
         return view('Frontend.account.password');
     }
 
-    public function postUpdate()
+    public function postUpdate(UpdatePasswordRequest $request)
     {
-        // code...
+    	$user = auth()->user();
+    	$user->password = $request->input('password');
+    	$user->save();
+
+    	return redirect()->back()->with('success', 'Password has been updated!');
     }
 }
