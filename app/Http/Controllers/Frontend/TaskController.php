@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Frontend\TaskCreateRequest;
 use App\Task;
-use Auth;
 
 class TaskController extends Controller
 {
@@ -19,9 +19,18 @@ class TaskController extends Controller
 		return view('Frontend.tasks.create');
 	}
 
-	public function postCreate()
+	public function postCreate(TaskCreateRequest $request)
 	{
-		// Post create task code
+		Task::create(['user_id' => auth()->user()->id, 'title' => $request->input('title')]);
+
+		return redirect('/tasks')->with('success', 'Task has been created!');
+	}
+
+	public function delete(Task $task)
+	{
+		$task->delete();
+
+		return redirect()->back()->with('success', 'Task has been deleted!');
 	}
 
 	public function taskState(Request $request)

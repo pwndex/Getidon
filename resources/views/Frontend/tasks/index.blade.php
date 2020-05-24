@@ -23,7 +23,7 @@
 					<input class="checkbox taskstate" name="taskstate" type="checkbox" value="{{ $task->id }}" {{ ($task->is_done == 1) ? 'checked' : ''}}>
 				</td>
 				<td>
-					<a href="#" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
+					<a href="/tasks/{{ $task->id }}/delete" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a>
 				</td>
 			</tr>
 			@endforeach
