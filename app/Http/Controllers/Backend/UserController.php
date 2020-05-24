@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserCreateRequest;
 use App\Http\Requests\Backend\UserUpdateRequest;
 use App\User;
+use App\Task;
 
 class UserController extends Controller
 {
@@ -48,6 +49,7 @@ class UserController extends Controller
 
 	public function delete(User $user)
 	{
+		Task::where('user_id', $user->id)->delete();
 		$user->delete();
 
 		return redirect()->back()->with('success', 'User has been successfully deleted!');
