@@ -29,7 +29,9 @@
 				<td>User</td>
 			@endif
 			<td><a href="/dashboard/users/{{ $user->id }}/update" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
+			@if($user->is_admin != 1)
 			<td><a href="/dashboard/users/{{ $user->id }}/delete" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
+			@endif
 		</tr>
 		@endforeach
 	</tbody>
