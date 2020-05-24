@@ -25,7 +25,7 @@ class UserController extends Controller
 	{
 		User::create($request->all());
 
-		return redirect('/dashboard/users')->with('success', 'User has been successfully created!');
+		return redirect('/dashboard/users')->with('success', 'User has been created!');
 	}
 
 	public function getUpdate(User $user)
@@ -44,7 +44,7 @@ class UserController extends Controller
 
 		$user->save();
 
-		return redirect('/dashboard/users')->with('success', 'User has been successfully updated!');
+		return redirect('/dashboard/users')->with('success', 'User has been updated!');
 	}
 
 	public function delete(User $user)
@@ -53,7 +53,7 @@ class UserController extends Controller
 			Task::where('user_id', $user->id)->delete();
 			$user->delete();
 
-			return redirect()->back()->with('success', 'User has been successfully deleted!');
+			return redirect()->back()->with('success', 'User has been deleted!');
 		}
 		return redirect()->back()->with('error', 'User is Admin!');
 	}

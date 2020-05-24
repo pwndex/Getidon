@@ -18,7 +18,7 @@ class AuthController extends Controller
 	{
 		$credentials = $request->only('email', 'password');
 		if(auth()->attempt($credentials, $request->has('remember_me'))) {
-			return redirect('/tasks')->with('success', 'You have been successfully loged in!');
+			return redirect('/tasks')->with('success', 'You have been loged in!');
 		}
 		return redirect('/login')->with('error', 'Incorrect email or password!');
 	}
@@ -33,13 +33,13 @@ class AuthController extends Controller
 		$user = User::create($request->all());
 		auth()->login($user);
 
-		return redirect('/tasks')->with('success', 'You have been successfully joined in!');
+		return redirect('/tasks')->with('success', 'You have been joined in!');
 	}
 
 	public function logout()
 	{
 		auth()->logout();
 
-		return redirect('/login')->with('success', 'You have been successfully loged out!');
+		return redirect('/login')->with('success', 'You have been loged out!');
 	}
 }
