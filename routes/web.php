@@ -63,8 +63,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function(){
 			Route::get('/settings', 'SettingsController@getUpdate');
 			Route::get('/password', 'PasswordController@getUpdate');
 
-			Route::post('/settings', 'SettingsController@getUpdate');
-			Route::post('/password', 'PasswordController@getUpdate');
+			Route::post('/settings', 'SettingsController@postUpdate');
+			Route::post('/password', 'PasswordController@postUpdate');
 		});
 
 

@@ -51,10 +51,7 @@
 		$.ajax({
 		    url: '/tasks/' + e.target.value + '/taskstate',
 		    type: 'POST',
-		    taskstate: e.target.value,
-		    success: function(msg) {
-				console.log(msg);
-	        }
+		    taskstate: e.target.value
 		});
 	});
 </script>

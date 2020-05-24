@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Account;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\UpdateAccountRequest;
 
 class SettingsController extends Controller
 {
@@ -11,8 +12,13 @@ class SettingsController extends Controller
     	return view('Frontend.account.settings');
     }
 
-    public function postUpdate()
+    public function postUpdate(UpdateAccountRequest $request)
     {
-        // code...
+    	$user = auth()->user();
+    	$user->email = $request->input('email');
+    	$user->name = $request->input('name');
+    	$user->save();
+
+    	return redirect()->back()->with('success', 'Settings have been updated!');
     }
 }
