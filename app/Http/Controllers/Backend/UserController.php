@@ -49,8 +49,8 @@ class UserController extends Controller
 
 	public function delete(User $user)
 	{
-		if($user->is_admin != 1){
-			Task::where('user_id', $user->id)->delete();
+		if(auth()->user()->is_admin){
+			$user->tasks()->delete();
 			$user->delete();
 
 			return redirect()->back()->with('success', 'User has been deleted!');

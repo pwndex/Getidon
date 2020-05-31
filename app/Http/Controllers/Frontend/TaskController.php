@@ -33,12 +33,16 @@ class TaskController extends Controller
 		return redirect()->back()->with('success', 'Task has been deleted!');
 	}
 
-	public function taskState(Request $request)
+	public function taskState(Task $task)
 	{
-		$task = Task::findOrFail($request->id);
-		if(auth()->user()->id == $task->user_id){
-			$task->is_done = ($task->is_done == 1) ? 0 : 1;
-			$task->save();
+		if (!auth()->user()->is($task->user)) {
+			return response('Access denied', 403);
 		}
+
+		$task->update([
+			'is_done' => !$task->is_done
+		]);
+
+		return response(null, 200);
 	}
 }

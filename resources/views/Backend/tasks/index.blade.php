@@ -29,7 +29,12 @@
 				<td>No</td>
 			@endif
 			<td><a href="/dashboard/tasks/{{ $task->id }}/update" class="btn btn-sm custom-btn"><i class="fas fa-edit"></i></a></td>
-			<td><a href="/dashboard/tasks/{{ $task->id }}/delete" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></a></td>
+			<td>
+				<form action="/dashboard/tasks/{{ $task->id }}/delete" method="POST">
+					{{ csrf_field() }}
+					<button type="submit" class="btn btn-sm custom-btn"><i class="fas fa-trash-alt"></i></button>
+				</form>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>
