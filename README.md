@@ -1,7 +1,7 @@
 ![Getidon](public/images/getidon_1.png)
 # About Getidon
 
-Getidon is the powerful todo list, built in Laravel framework
+Getidon is the powerful todo list, built in using Laravel framework
 
 ## Requirements
 
